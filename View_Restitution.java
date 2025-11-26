@@ -25,7 +25,7 @@ public class View_Restitution {
     private DefaultTableModel modelTable;
     private TableRowSorter<DefaultTableModel> sorter;
 
-    // 🎨 Couleurs
+    
     private final Color violetPastel = new Color(180, 150, 255);
     private final Color violetHover = new Color(160, 120, 245);
     private final Color violetFond = new Color(220, 190, 255);
@@ -43,14 +43,14 @@ public class View_Restitution {
         frame.setLocationRelativeTo(null);
         mainMVC.getM().getall(); 
 
-        // 🟣 Panel principal arrondi violet
+    
         JPanel panel = new JPanel() {
             /**
 			 * 
 			 */
 			private static final long serialVersionUID = 1L;
 
-			@Override
+			
             protected void paintComponent(Graphics g) {
                 super.paintComponent(g);
                 Graphics2D g2d = (Graphics2D) g;
@@ -62,7 +62,7 @@ public class View_Restitution {
         panel.setLayout(null);
         frame.setContentPane(panel);
 
-        // 🟣 Titre blanc
+        // titre blanc
         lblTitre = new JLabel("RESTITUTION DE LIVRES");
         lblTitre.setFont(new Font("Book Antiqua", Font.BOLD, 28));
         lblTitre.setForeground(Color.WHITE);
@@ -70,7 +70,7 @@ public class View_Restitution {
         lblTitre.setBounds(180, 20, 400, 35);
         panel.add(lblTitre);
 
-        // 🔢 Numéro adhérent
+        //Numéro adhérent
         JLabel lblNumAd = new JLabel("Numéro adhérent :");
         lblNumAd.setFont(new Font("Book Antiqua", Font.PLAIN, 16));
         lblNumAd.setBounds(160, 90, 150, 25);
@@ -80,13 +80,13 @@ public class View_Restitution {
         txtNumAdherent.setBounds(320, 90, 130, 25);
         panel.add(txtNumAdherent);
 
-        // 🔘 Bouton Valider
+        //Bouton Valider
         JButton btnValider = new JButton("VALIDER");
         styleButton(btnValider);
         btnValider.setBounds(480, 85, 140, 35);
         panel.add(btnValider);
 
-        // 🔍 Filtre ISBN
+        // Filtre ISBN
         lblISBN = new JLabel("Filtrer par ISBN :");
         lblISBN.setFont(new Font("Book Antiqua", Font.PLAIN, 16));
         lblISBN.setBounds(80, 90, 150, 30);
@@ -198,7 +198,7 @@ public class View_Restitution {
         });
     }
 
-    // Style bouton violet pastel
+   
     private void styleButton(JButton btn) {
         btn.setBackground(violetPastel);
         btn.setForeground(Color.WHITE);
