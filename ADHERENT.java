@@ -59,7 +59,7 @@ public class ADHERENT {
         }
     }
 
-    
+    @Override
     public String toString() {
         return nom + " " + prenom + " (" + email + ")"; // pour afficher l'objet
     }
