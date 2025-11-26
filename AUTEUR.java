@@ -7,10 +7,10 @@ public class AUTEUR {
     private int num;
     private String nom;
     private String prenom;
-    private Date date_naissance; // pour compatibilité BDD
+    private Date date_naissance; //compatibilité BDD
     private String text; // description
 
-    // Constructeur complet
+    // Constructeur
     public AUTEUR(int num, String nom, String prenom, Date date_naissance, String text) {
         this.num = num;
         this.nom = nom;
@@ -28,7 +28,6 @@ public class AUTEUR {
         this.text = text;
     }
 
-    // Constructeur minimal
     public AUTEUR(String nom, String prenom) {
         this.nom = nom;
         this.prenom = prenom;
@@ -37,7 +36,7 @@ public class AUTEUR {
         this.text = "";
     }
 
-    // Getters / Setters
+
     public int getNum() { return num; }
     public void setNum(int num) { this.num = num; }
 
@@ -54,7 +53,6 @@ public class AUTEUR {
     public void setText(String text) { this.text = text; }
 
     // Pour affichage pratique
-    @Override
     public String toString() {
         String dateStr = (date_naissance != null) ? date_naissance.toString() : "Inconnue";
         return nom + " " + prenom + " (" + text + ") - Né(e) le : " + dateStr;
