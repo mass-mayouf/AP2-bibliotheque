@@ -210,7 +210,7 @@ public class View_Emprunt {
         btn.setOpaque(true);
 
         btn.addMouseListener(new MouseAdapter() {
-            
+           
             public void mouseEntered(MouseEvent e) {
                 btn.setBackground(violetHover);
             }
