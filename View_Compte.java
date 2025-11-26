@@ -26,7 +26,6 @@ public class View_Compte {
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setLocationRelativeTo(null);
 
-        // PANEL PRINCIPAL AVEC FOND PASTEL
         JPanel panelMain = new JPanel() {
             /**
 			 * 
@@ -52,14 +51,14 @@ public class View_Compte {
         // TITRE
         JLabel lblTitre = new JLabel("MON COMPTE");
         lblTitre.setFont(new Font("Book Antiqua", Font.BOLD, 22));
-        lblTitre.setForeground(Color.WHITE); // titre en blanc
+        lblTitre.setForeground(Color.WHITE); 
         lblTitre.setHorizontalAlignment(SwingConstants.CENTER);
         lblTitre.setBounds(200, 10, 300, 30);
         panelMain.add(lblTitre);
 
         // N° ADHERENT
         JLabel lblNumAd = new JLabel("n° adhérent :");
-        lblNumAd.setForeground(Color.BLACK); // texte normal en noir
+        lblNumAd.setForeground(Color.BLACK); 
         lblNumAd.setBounds(10, 50, 100, 25);
         panelMain.add(lblNumAd);
 
@@ -70,7 +69,7 @@ public class View_Compte {
         JButton btnValider = createRoundedButton("Valider", 200, 50, 100, 30);
         panelMain.add(btnValider);
 
-        // TextFields pour infos
+        // TextFields
         JTextField txtNom = new JTextField();
         txtNom.setBounds(80, 90, 200, 25);
         txtNom.setVisible(false);
@@ -192,7 +191,7 @@ public class View_Compte {
                             ad.setPrenom(txtPrenom.getText().trim());
                             ad.setEmail(txtEmail.getText().trim());
 
-                            // 🔥 Appel au modèle pour mettre à jour en BDD
+                           
                             mainMVC.getM().updateAdherent(ad);
 
                             JOptionPane.showMessageDialog(frame, "Adhérent mis à jour dans la base !");
@@ -240,15 +239,14 @@ public class View_Compte {
         });
     }
 
-    // Création bouton violet pastel plus clair
     private JButton createRoundedButton(String text, int x, int y, int width, int height) {
         JButton button = new JButton(text);
         button.setFont(new Font("Book Antiqua", Font.BOLD, 16));
-        button.setForeground(Color.WHITE); // texte bouton blanc
+        button.setForeground(Color.WHITE); 
         button.setBounds(x, y, width, height);
 
-        Color violetBouton = new Color(200, 170, 255); // violet pastel plus clair
-        Color violetHover = new Color(180, 150, 245);  // légèrement plus foncé au hover
+        Color violetBouton = new Color(200, 170, 255); 
+        Color violetHover = new Color(180, 150, 245);  
 
         button.setBackground(violetBouton);
         button.setOpaque(true);
