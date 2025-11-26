@@ -187,11 +187,21 @@ public class View_Compte {
                     lblNumAd.setVisible(false);
 
                     btnMAJ.addActionListener(ev -> {
-                        ad.setNom(txtNom.getText().trim());
-                        ad.setPrenom(txtPrenom.getText().trim());
-                        ad.setEmail(txtEmail.getText().trim());
-                        mainMVC.getM().findAdherent(ad.getNum());
+                        try {
+                            ad.setNom(txtNom.getText().trim());
+                            ad.setPrenom(txtPrenom.getText().trim());
+                            ad.setEmail(txtEmail.getText().trim());
+
+                            // 🔥 Appel au modèle pour mettre à jour en BDD
+                            mainMVC.getM().updateAdherent(ad);
+
+                            JOptionPane.showMessageDialog(frame, "Adhérent mis à jour dans la base !");
+                        } catch (Exception ex) {
+                            ex.printStackTrace();
+                            JOptionPane.showMessageDialog(frame, "Erreur lors de la mise à jour !");
+                        }
                     });
+
                 }
             } catch (Exception ex) {
                 ex.printStackTrace();
